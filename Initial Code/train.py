@@ -36,7 +36,7 @@ def build_model(input_size, data_augmentation):
                                                    weights='imagenet')
 
     global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
-    prediction_layer = tf.keras.layers.Dense(3, activation='softmax')
+    prediction_layer = tf.keras.layers.Dense(3)
 
     inputs = tf.keras.Input(shape=(250, 250, 3))
     x = data_augmentation(inputs)
@@ -72,6 +72,7 @@ def plot_history(history_fine):
     plt.xlabel('epoch')
     plt.show()
 
+
 def convertHistoryToCSV(hist_df):
     # convert the history.history dict to a pandas DataFrame:
     hist_df = pd.DataFrame(history_fine.history)
@@ -89,13 +90,16 @@ def main():
     LR = 1e-4
     N_EPOCHS = 20
 
-    train_ds, val_ds = build_train_val_test_datasets(DS_PATH, BATCH_SIZE, IMG_SIZE)
+    train_ds, val_ds = build_train_val_test_datasets(
+        DS_PATH, BATCH_SIZE, IMG_SIZE)
 
     data_augmentation = tf.keras.Sequential([
         tf.keras.layers.experimental.preprocessing.RandomRotation(0.1),
         tf.keras.layers.experimental.preprocessing.RandomContrast(0.2),
-        tf.keras.layers.experimental.preprocessing.RandomTranslation((-0.1, 0.1), (-0.1, 0.1)),
-        tf.keras.layers.experimental.preprocessing.RandomZoom((-0.2, 0.2), (-0.2, 0.2))
+        tf.keras.layers.experimental.preprocessing.RandomTranslation(
+            (-0.1, 0.1), (-0.1, 0.1)),
+        tf.keras.layers.experimental.preprocessing.RandomZoom(
+            (-0.2, 0.2), (-0.2, 0.2))
     ])
 
     #####

@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
 
-img_name = 'teste.png'
+img_name = 'test21.png'
 img = cv.imread(img_name, cv.IMREAD_GRAYSCALE)
 img = cv.resize(img, (250, 250))  # Imagem original
 
@@ -25,12 +25,11 @@ img_transformed = img_transformed.astype(np.uint8)
 img_transformed = cv.equalizeHist(img_transformed)
 
 
-titles = ['Imagem Original', 'Imagem Original Equalizada',
-          'Imagem Transformada e Equalizada']
-images = [img, img_equalized, img_transformed]
+titles = ['Imagem Original', 'Imagem Transformada']
+images = [img, img_transformed]
 
 for i in range(len(images)):
-    plt.subplot(1, 3, i+1)
+    plt.subplot(1, 2, i+1)
     plt.imshow(images[i], 'gray')
 
     plt.title(titles[i])

@@ -158,6 +158,7 @@ def main():
 
     for image_batch, label_batch in test_ds.as_numpy_iterator():
         predictions = model.predict_on_batch(image_batch)
+        predictions = tf.nn.softmax(predictions)
 
         for pos in range(len(label_batch)):
             file_metrics.write(
