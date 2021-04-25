@@ -5,51 +5,67 @@ import numpy as np
 
 
 def preprocessImg(img):
-    img = cv.resize(img, (250, 250))  # Imagem original
-
-    img_equalized = cv.equalizeHist(img)  # Imagem original equalizada
-
     img = img.astype(np.float32)
+    kernel = np.ones((32, 32), np.float32)
 
-    kernel = np.ones((32, 32), np.uint8)
-    top_hat = cv.morphologyEx(img, cv.MORPH_TOPHAT, kernel)  # Imagem TopHat
-    black_hat = cv.morphologyEx(img, cv.MORPH_BLACKHAT, kernel)  # Imagem BlackHat
+    # Imagem TopHat
+    top_hat = cv.morphologyEx(img, cv.MORPH_TOPHAT, kernel)
+    # Imagem BlackHat
+    black_hat = cv.morphologyEx(img, cv.MORPH_BLACKHAT, kernel)
+    # Imagem transformada
+    img_transformed = img + top_hat - black_hat
 
-    img_transformed = img + top_hat - black_hat  # Imagem transformada
-
+    # normalization
     img_transformed -= np.min(img_transformed)
     img_transformed /= np.max(img_transformed)
     img_transformed *= 255
 
-    img_transformed = img_transformed.astype(np.uint8) # Imagem transformada e equalizada
+    # Imagem transformada e equalizada
+    img_transformed = img_transformed.astype(np.uint8)
     img_transformed = cv.equalizeHist(img_transformed)
+    img_transformed = cv.resize(img_transformed, (250, 250))
 
     return img_transformed
 
 
 def main():
+    ORIG_DIR = "DONE_DATA"
+    OUTPUT_DIR = "PROCESSED_DATA"
     PATH_BASE = "C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET"
-    PATH_TRAIN_COVID_OLD = os.path.join(PATH_BASE, "DONE_DATA", "train", "COVID-19")
-    PATH_TRAIN_NORMAL_OLD = os.path.join(PATH_BASE, "DONE_DATA", "train", "NORMAL")
-    PATH_TRAIN_PNEUMONIA_OLD = os.path.join(PATH_BASE, "DONE_DATA", "train", "Pneumonia")
-    PATH_TEST_COVID_OLD = os.path.join(PATH_BASE, "DONE_DATA", "test", "COVID-19")
-    PATH_TEST_NORMAL_OLD = os.path.join(PATH_BASE, "DONE_DATA", "test", "NORMAL")
-    PATH_TEST_PNEUMONIA_OLD = os.path.join(PATH_BASE, "DONE_DATA", "test", "Pneumonia")
+
+    PATH_TRAIN_COVID_OLD = os.path.join(
+        PATH_BASE, ORIG_DIR, "train", "COVID-19")
+    PATH_TRAIN_NORMAL_OLD = os.path.join(
+        PATH_BASE, ORIG_DIR, "train", "NORMAL")
+    PATH_TRAIN_PNEUMONIA_OLD = os.path.join(
+        PATH_BASE, ORIG_DIR, "train", "Pneumonia")
+    PATH_TEST_COVID_OLD = os.path.join(
+        PATH_BASE, ORIG_DIR, "test", "COVID-19")
+    PATH_TEST_NORMAL_OLD = os.path.join(
+        PATH_BASE, ORIG_DIR, "test", "NORMAL")
+    PATH_TEST_PNEUMONIA_OLD = os.path.join(
+        PATH_BASE, ORIG_DIR, "test", "Pneumonia")
     list_path_old = [PATH_TRAIN_COVID_OLD, PATH_TRAIN_NORMAL_OLD, PATH_TRAIN_PNEUMONIA_OLD,
                      PATH_TEST_COVID_OLD, PATH_TEST_NORMAL_OLD, PATH_TEST_PNEUMONIA_OLD]
 
-    PATH_TRAIN_COVID_NEW = os.path.join(PATH_BASE, "PROCESSED_DATA", "train", "COVID-19")
-    PATH_TRAIN_NORMAL_NEW = os.path.join(PATH_BASE, "PROCESSED_DATA", "train", "NORMAL")
-    PATH_TRAIN_PNEUMONIA_NEW = os.path.join(PATH_BASE, "PROCESSED_DATA", "train", "Pneumonia")
-    PATH_TEST_COVID_NEW = os.path.join(PATH_BASE, "PROCESSED_DATA", "test", "COVID-19")
-    PATH_TEST_NORMAL_NEW = os.path.join(PATH_BASE, "PROCESSED_DATA", "test", "NORMAL")
-    PATH_TEST_PNEUMONIA_NEW = os.path.join(PATH_BASE, "PROCESSED_DATA", "test", "Pneumonia")
+    PATH_TRAIN_COVID_NEW = os.path.join(
+        PATH_BASE, OUTPUT_DIR, "train", "COVID-19")
+    PATH_TRAIN_NORMAL_NEW = os.path.join(
+        PATH_BASE, OUTPUT_DIR, "train", "NORMAL")
+    PATH_TRAIN_PNEUMONIA_NEW = os.path.join(
+        PATH_BASE, OUTPUT_DIR, "train", "Pneumonia")
+    PATH_TEST_COVID_NEW = os.path.join(
+        PATH_BASE, OUTPUT_DIR, "test", "COVID-19")
+    PATH_TEST_NORMAL_NEW = os.path.join(
+        PATH_BASE, OUTPUT_DIR, "test", "NORMAL")
+    PATH_TEST_PNEUMONIA_NEW = os.path.join(
+        PATH_BASE, OUTPUT_DIR, "test", "Pneumonia")
     list_path_new = [PATH_TRAIN_COVID_NEW, PATH_TRAIN_NORMAL_NEW, PATH_TRAIN_PNEUMONIA_NEW,
                      PATH_TEST_COVID_NEW, PATH_TEST_NORMAL_NEW, PATH_TEST_PNEUMONIA_NEW]
 
-    os.mkdir(os.path.join(PATH_BASE, "PROCESSED_DATA"))
-    os.mkdir(os.path.join(PATH_BASE, "PROCESSED_DATA", "train"))
-    os.mkdir(os.path.join(PATH_BASE, "PROCESSED_DATA", "test"))
+    os.mkdir(os.path.join(PATH_BASE, OUTPUT_DIR))
+    os.mkdir(os.path.join(PATH_BASE, OUTPUT_DIR, "train"))
+    os.mkdir(os.path.join(PATH_BASE, OUTPUT_DIR, "test"))
 
     for i in range(len(list_path_old)):
         oldPath = list_path_old[i]

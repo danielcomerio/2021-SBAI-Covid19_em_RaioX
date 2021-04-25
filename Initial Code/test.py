@@ -132,7 +132,7 @@ def build_train_val_test_datasets(dataset_dir, batch_size, img_size):
     test_dir = os.path.join(dataset_dir, "test")
 
     test_dataset, test_paths = image_dataset_from_directory(test_dir,
-                                                            shuffle=True,
+                                                            shuffle=False,
                                                             batch_size=batch_size,
                                                             image_size=img_size)
 
@@ -147,7 +147,8 @@ def main():
     BATCH_SIZE = 32
     IMG_SIZE = (250, 250)
 
-    test_ds, test_paths = build_train_val_test_datasets(DS_PATH, BATCH_SIZE, IMG_SIZE)
+    test_ds, test_paths = build_train_val_test_datasets(
+        DS_PATH, BATCH_SIZE, IMG_SIZE)
 
     model = load_model('modeloMobileNetV2-1.0.h5')
     model.summary()
@@ -161,8 +162,9 @@ def main():
         predictions = tf.nn.softmax(predictions)
 
         for pos in range(len(label_batch)):
+            probs = ", ".join(map(str, predictions[pos]))
             file_metrics.write(
-                str(test_paths[img_pos]) + ", " + str(label_batch[pos]) + ", " + str(predictions[pos][0]) + ", " + str(predictions[pos][1]) + ", " + str(predictions[pos][2]) + '\n')
+                str(test_paths[img_pos]) + ", " + str(label_batch[pos]) + ", " + probs + '\n')
             img_pos = img_pos + 1
 
     file_metrics.close()
