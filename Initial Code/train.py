@@ -195,7 +195,7 @@ def main():
         train_ds, epochs=args.n_epochs, validation_data=val_ds)
     plot_history(history_fine, output_dir)
 
-    save(output_dir, history_fine, "history.pickle")
+    save(output_dir, history_fine.history, "history.pickle")
     model.save(os.path.join(output_dir, 'model.h5'))
 
     # esse arquivo serve apenas para que a gente consiga verificar
