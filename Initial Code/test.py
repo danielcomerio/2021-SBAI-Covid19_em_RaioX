@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 
 from tensorflow.keras.models import load_model
-
+import argparse
 
 # Todo esse código é utilizado para sobrescrever a função nativa do keras "image_dataset_from_directory"
 # Para poder capturar além do Dataset os PATHs das imagens
@@ -142,18 +142,31 @@ def build_train_val_test_datasets(dataset_dir, batch_size, img_size):
     return test_dataset, test_paths
 
 
+def parse_command_line_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("dataset", help="path to the dataset", type=str)
+    parser.add_argument("-b", "--batch_size", type=int, default=32)
+    parser.add_argument("-mo", "--model", type=str, default="model.h5")
+    parser.add_argument("-me", "--metrics", type=str, default="metrics.txt")
+
+    args = parser.parse_args()
+
+    return args
+
+
 def main():
-    DS_PATH = "C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET\\DONE_DATA"
-    BATCH_SIZE = 32
+    # py test.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET\\DONE_DATA
+    args = parse_command_line_args()
+
     IMG_SIZE = (250, 250)
 
     test_ds, test_paths = build_train_val_test_datasets(
-        DS_PATH, BATCH_SIZE, IMG_SIZE)
+        args.dataset, args.batch_size, IMG_SIZE)
 
-    model = load_model('modeloMobileNetV2-1.0.h5')
+    model = load_model(args.model)
     model.summary()
 
-    file_metrics = open("metrics.txt", "w")
+    file_metrics = open(args.metrics, "w")
     img_pos = 0
     #file_metrics.write("path_imagem, classe_real, classe_predita")
 
@@ -162,7 +175,8 @@ def main():
         predictions = tf.nn.softmax(predictions)
 
         for pos in range(len(label_batch)):
-            probs = ", ".join(map(str, predictions[pos]))
+            probs = ", ".join(
+                map(str, tf.keras.backend.get_value(predictions[pos])))
             file_metrics.write(
                 str(test_paths[img_pos]) + ", " + str(label_batch[pos]) + ", " + probs + '\n')
             img_pos = img_pos + 1
