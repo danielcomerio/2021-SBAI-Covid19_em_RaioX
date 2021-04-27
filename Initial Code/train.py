@@ -109,7 +109,7 @@ def plot_history(history_fine, output_dir):
 
 def convertHistoryToCSV(hist_df):
     # convert the history.history dict to a pandas DataFrame:
-    hist_df = pd.DataFrame(history_fine.history)
+    hist_df = pd.DataFrame(hist_df.history)
 
     # save to csv:
     hist_csv_file = 'history.csv'

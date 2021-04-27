@@ -2,6 +2,7 @@ import os
 
 import cv2 as cv
 import numpy as np
+import argparse
 
 
 def preprocessImg(img):
@@ -28,44 +29,55 @@ def preprocessImg(img):
     return img_transformed
 
 
+def parse_command_line_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("dataset", help="path to the dataset", type=str)
+
+    args = parser.parse_args()
+
+    return args
+
+
 def main():
+    # py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
+    args = parse_command_line_args()
+
     ORIG_DIR = "DONE_DATA"
     OUTPUT_DIR = "PROCESSED_DATA"
-    PATH_BASE = "C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET"
 
     PATH_TRAIN_COVID_OLD = os.path.join(
-        PATH_BASE, ORIG_DIR, "train", "COVID-19")
+        args.dataset, ORIG_DIR, "train", "COVID-19")
     PATH_TRAIN_NORMAL_OLD = os.path.join(
-        PATH_BASE, ORIG_DIR, "train", "NORMAL")
+        args.dataset, ORIG_DIR, "train", "NORMAL")
     PATH_TRAIN_PNEUMONIA_OLD = os.path.join(
-        PATH_BASE, ORIG_DIR, "train", "Pneumonia")
+        args.dataset, ORIG_DIR, "train", "Pneumonia")
     PATH_TEST_COVID_OLD = os.path.join(
-        PATH_BASE, ORIG_DIR, "test", "COVID-19")
+        args.dataset, ORIG_DIR, "test", "COVID-19")
     PATH_TEST_NORMAL_OLD = os.path.join(
-        PATH_BASE, ORIG_DIR, "test", "NORMAL")
+        args.dataset, ORIG_DIR, "test", "NORMAL")
     PATH_TEST_PNEUMONIA_OLD = os.path.join(
-        PATH_BASE, ORIG_DIR, "test", "Pneumonia")
+        args.dataset, ORIG_DIR, "test", "Pneumonia")
     list_path_old = [PATH_TRAIN_COVID_OLD, PATH_TRAIN_NORMAL_OLD, PATH_TRAIN_PNEUMONIA_OLD,
                      PATH_TEST_COVID_OLD, PATH_TEST_NORMAL_OLD, PATH_TEST_PNEUMONIA_OLD]
 
     PATH_TRAIN_COVID_NEW = os.path.join(
-        PATH_BASE, OUTPUT_DIR, "train", "COVID-19")
+        args.dataset, OUTPUT_DIR, "train", "COVID-19")
     PATH_TRAIN_NORMAL_NEW = os.path.join(
-        PATH_BASE, OUTPUT_DIR, "train", "NORMAL")
+        args.dataset, OUTPUT_DIR, "train", "NORMAL")
     PATH_TRAIN_PNEUMONIA_NEW = os.path.join(
-        PATH_BASE, OUTPUT_DIR, "train", "Pneumonia")
+        args.dataset, OUTPUT_DIR, "train", "Pneumonia")
     PATH_TEST_COVID_NEW = os.path.join(
-        PATH_BASE, OUTPUT_DIR, "test", "COVID-19")
+        args.dataset, OUTPUT_DIR, "test", "COVID-19")
     PATH_TEST_NORMAL_NEW = os.path.join(
-        PATH_BASE, OUTPUT_DIR, "test", "NORMAL")
+        args.dataset, OUTPUT_DIR, "test", "NORMAL")
     PATH_TEST_PNEUMONIA_NEW = os.path.join(
-        PATH_BASE, OUTPUT_DIR, "test", "Pneumonia")
+        args.dataset, OUTPUT_DIR, "test", "Pneumonia")
     list_path_new = [PATH_TRAIN_COVID_NEW, PATH_TRAIN_NORMAL_NEW, PATH_TRAIN_PNEUMONIA_NEW,
                      PATH_TEST_COVID_NEW, PATH_TEST_NORMAL_NEW, PATH_TEST_PNEUMONIA_NEW]
 
-    os.mkdir(os.path.join(PATH_BASE, OUTPUT_DIR))
-    os.mkdir(os.path.join(PATH_BASE, OUTPUT_DIR, "train"))
-    os.mkdir(os.path.join(PATH_BASE, OUTPUT_DIR, "test"))
+    os.mkdir(os.path.join(args.dataset, OUTPUT_DIR))
+    os.mkdir(os.path.join(args.dataset, OUTPUT_DIR, "train"))
+    os.mkdir(os.path.join(args.dataset, OUTPUT_DIR, "test"))
 
     for i in range(len(list_path_old)):
         oldPath = list_path_old[i]
