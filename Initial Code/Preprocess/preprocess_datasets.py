@@ -209,6 +209,7 @@ def parse_command_line_args():
 def main():
     # py preprocess_datasets.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
     args = parse_command_line_args()
+    os.mkdir(os.path.join(args.dataset, "DONE_DATA"))
 
     # Necessário que tal pasta esteja criada e preenchida com os datasets individuais
     DATASETS_DIR = os.path.join(args.dataset, "RAW_DATA")
