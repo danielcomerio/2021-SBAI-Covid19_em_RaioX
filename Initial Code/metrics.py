@@ -14,7 +14,6 @@ def parse_command_line_args():
 
 
 def main():
-    # py metrics.py
     args = parse_command_line_args()
 
     file_metrics = open(args.metrics, "r")

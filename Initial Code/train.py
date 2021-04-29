@@ -152,7 +152,7 @@ def parse_command_line_args():
     parser.add_argument("-b", "--batch_size", type=int, default=32)
     parser.add_argument("-l", "--lr", help="learning rate",
                         type=float, default=1e-4)
-    parser.add_argument("-n", "--n_epochs", type=int, default=20)
+    parser.add_argument("-n", "--n_epochs", type=int, default=40)
     parser.add_argument("-m", "--model", type=str,
                         choices=models.keys(), default="mobilenet")
     parser.add_argument("-a", "--augment",
@@ -196,7 +196,7 @@ def main():
     plot_history(history_fine, output_dir)
 
     save(output_dir, history_fine.history, "history.pickle")
-    model.save(os.path.join(output_dir, 'model.h5'))
+    model.save(os.path.join(output_dir, 'model' + tag + '.h5'))
 
     # esse arquivo serve apenas para que a gente consiga verificar
     # quais experimentos terminaram olhando para os dados do diretorio.

@@ -1,14 +1,13 @@
-1º - Necessário escolher o PATH do local em que o trabalho ficará;
-2º - Nesse PATH escolhido, crie uma PASTA chamada "Artigo-Daniel";
-3º - Dentro da pasta "Artigo-Daniel" crie outra PASTA chamada de "DATA_SET";
-4º - Dentro da pasta "DATA_SET" crie outra PASTA chamada de "RAW_DATA";
-5º - Dentro da pasta "RAW_DATA" é necessário que você realize a descompactação
+1º - Escolha o local do computador em que o DATASET ficará;
+2º - Nesse local escolhido, crie uma PASTA chamada "DATA_SET";
+3º - Dentro da pasta "DATA_SET" crie outra PASTA chamada de "RAW_DATA";
+4º - Dentro da pasta "RAW_DATA" é necessário que você realize a descompactação
 de todos os 5 DATASETS individuais que serão utilizados no trabalho;
 
 Após a confecção de todos os diretórios necessários, agora é hora de realizar a execução dos scripts.
 
-6º - Abra o diretório que contenha o SCRIPT chamado "preprocess_datasets.py";
-7º - Abra o CMD dentro desse mesmo diretório;
+5º - Abra o diretório que contenha o SCRIPT chamado "preprocess_datasets.py";
+6º - Abra o CMD dentro desse mesmo diretório;
 
 Faça de conta que o PATH dos DATASETS tenha a seguinte estrutura: "C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET".
 
@@ -16,7 +15,8 @@ Faça de conta que o PATH dos DATASETS tenha a seguinte estrutura: "C:\\Users\\d
 
 Sua execução poderá demorar um pouco. Assim que finalizar, realize o próximo passo.
 
-8º - Execute o seguinte comando: py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET;
+8º - Supondo que o PATH do SCRIPT "preprocess_all_images.py" seja o mesmo do anterior,
+execute o seguinte comando: py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET;
 
 Assim que sua execução finalizar, o diretório do DATASET estará devidamente estruturado, preenchido e
 pronto para ser utilizado.

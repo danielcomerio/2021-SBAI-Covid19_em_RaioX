@@ -39,7 +39,6 @@ def parse_command_line_args():
 
 
 def main():
-    # py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
     args = parse_command_line_args()
 
     ORIG_DIR = "DONE_DATA"

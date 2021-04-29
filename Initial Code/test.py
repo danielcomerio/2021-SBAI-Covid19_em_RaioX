@@ -155,7 +155,6 @@ def parse_command_line_args():
 
 
 def main():
-    # py test.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET\\DONE_DATA
     args = parse_command_line_args()
 
     IMG_SIZE = (250, 250)

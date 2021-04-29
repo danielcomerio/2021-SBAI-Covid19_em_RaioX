@@ -5,14 +5,14 @@ import pandas as pd
 import glob
 import numpy as np
 import os
-import cv2
+from cv2 import cv2
 import shutil
 from sklearn.model_selection import train_test_split
 import pydicom
 
 import argparse
 
-
+ 
 def get_datasets_dirs(datasets_dir):
     files_and_dirs = os.listdir(datasets_dir)
     files_and_dirs_with_paths = map(
@@ -207,22 +207,19 @@ def parse_command_line_args():
 
 
 def main():
-    # py preprocess_datasets.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
     args = parse_command_line_args()
-    os.mkdir(os.path.join(args.dataset, "DONE_DATA"))
 
-    # Necessário que tal pasta esteja criada e preenchida com os datasets individuais
     DATASETS_DIR = os.path.join(args.dataset, "RAW_DATA")
     OUTPUT_DIR = os.path.join(args.dataset, "DONE_DATA")
 
     covid19_radiography_path = os.path.join(
-        DATASETS_DIR, "COVID-19_Radiography_Database")
+        DATASETS_DIR, "COVID-19 Radiography Database")
     covid_actualmed_path = os.path.join(
-        DATASETS_DIR, "Actualmed-COVID-chestxray-dataset-master")
+        DATASETS_DIR, "Actualmed-COVID-chestxray-dataset")
     covid_chestxray_path = os.path.join(
-        DATASETS_DIR, "covid-chestxray-dataset-master")
+        DATASETS_DIR, "covid-chestxray-dataset")
     figure1_covid_path = os.path.join(
-        DATASETS_DIR, "Figure1-COVID-chestxray-dataset-master")
+        DATASETS_DIR, "Figure1-COVID-chestxray-dataset")
     rnsa_path = os.path.join(
         DATASETS_DIR, "rsna-pneumonia-detection-challenge")
 
