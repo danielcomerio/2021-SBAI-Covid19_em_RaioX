@@ -1,3 +1,12 @@
 Other Codes
 results
 outros
+
+model_mobilenetProcessed.h5
+model_resnetProcessed.h5
+model_resnetNormal.h5
+model_efficientnetNormal.h5
+model_efficientnetProcessed.h5
+model_inceptionNormal.h5
+model_mobilenetNormal.h5
+model_inceptionProcessed.h5
