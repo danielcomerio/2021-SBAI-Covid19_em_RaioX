@@ -1,0 +1,115 @@
+mobilenetNormal
+confusion_matrix: 
+ [[157   7  17]
+ [  4 996  35]
+ [  2  53 705]]
+accuracy_score: 0.9402834008097166
+precision_score: 0.9458932653847599
+f1_score: 0.9316369938387888
+recall_score: 0.9191179114814019
+
+
+
+test_mobilenetProcessed
+confusion_matrix: 
+ [[ 141   18   22]
+ [   7 1005   23]
+ [  11   73  676]]
+accuracy_score: 0.9220647773279352
+precision_score: 0.9137833136364658
+f1_score: 0.895175867357156
+recall_score: 0.8798312339420092
+
+
+
+resnetNormal
+confusion_matrix: 
+ [[ 141   17   23]
+ [   0 1016   19]
+ [   4   88  668]]
+accuracy_score: 0.923582995951417
+precision_score: 0.9398641647376235
+f1_score: 0.9054534325349399
+recall_score: 0.8798651351200752
+
+
+
+resnetProcessed
+confusion_matrix: 
+ [[179   1   1]
+ [329 649  57]
+ [175  18 567]]
+accuracy_score: 0.7059716599190283
+precision_score: 0.713611983061695
+f1_score: 0.6651029318445795
+recall_score: 0.7873520159728865
+
+
+
+efficientnetNormal
+confusion_matrix: 
+ [[142  14  25]
+ [  0 996  39]
+ [  2  52 706]]
+accuracy_score: 0.9331983805668016
+precision_score: 0.9469491117796203
+f1_score: 0.9155501466937972
+recall_score: 0.8919321985803648
+
+
+
+efficientnetProcessed
+confusion_matrix: 
+ [[175   2   4]
+ [136 823  76]
+ [117   6 637]]
+accuracy_score: 0.8274291497975709
+precision_score: 0.7625585126799884
+f1_score: 0.7731242118840917
+recall_score: 0.8667259351972426
+
+
+
+inceptionNormal
+confusion_matrix: 
+ [[ 149   15   17]
+ [   4 1017   14]
+ [  12   78  670]]
+accuracy_score: 0.9291497975708503
+precision_score: 0.9250079933389491
+f1_score: 0.9089011460805269
+recall_score: 0.8957973543033658
+
+
+
+inceptionProcessed
+confusion_matrix: 
+ [[ 129   20   32]
+ [   1 1005   29]
+ [   2   69  689]]
+accuracy_score: 0.9225708502024291
+precision_score: 0.938195520100456
+f1_score: 0.8936563817773524
+recall_score: 0.863433540814162
+
+
+
+
+
+
+
+mobilenetNormal: accuracy_score: 0.9402834008097166
+
+test_mobilenetProcessed: accuracy_score: 0.9220647773279352
+
+resnetNormal: accuracy_score: 0.923582995951417
+
+resnetProcessed: accuracy_score: 0.7059716599190283
+
+efficientnetNormal: accuracy_score: 0.9331983805668016
+
+efficientnetProcessed: accuracy_score: 0.8274291497975709
+
+inceptionNormal: accuracy_score: 0.9291497975708503
+
+inceptionProcessed: accuracy_score: 0.9225708502024291

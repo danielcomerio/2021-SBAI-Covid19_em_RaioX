@@ -12,26 +12,6 @@ from tensorflow.keras.models import load_model
 import argparse
 
 
-models = {
-    "resnet": {
-        "preproc": tf.keras.applications.resnet50.preprocess_input,
-        "model": tf.keras.applications.resnet50.ResNet50
-    },
-    "mobilenet": {
-        "preproc": tf.keras.applications.mobilenet_v2.preprocess_input,
-        "model": tf.keras.applications.mobilenet_v2.MobileNetV2,
-    },
-    "efficientnet": {
-        "preproc": tf.keras.applications.efficientnet.preprocess_input,
-        "model": tf.keras.applications.efficientnet.EfficientNetB2,
-    },
-    "inception": {
-        "preproc": tf.keras.applications.inception_v3.preprocess_input,
-        "model": tf.keras.applications.inception_v3.InceptionV3,
-    },
-}
-
-
 # Todo esse código é utilizado para sobrescrever a função nativa do keras "image_dataset_from_directory"
 # Para poder capturar além do Dataset os PATHs das imagens
 
@@ -166,8 +146,6 @@ def build_train_val_test_datasets(dataset_dir, batch_size, img_size):
 def parse_command_line_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("dataset", help="path to the dataset", type=str)
-    parser.add_argument("-m", "--model", help="type of the model",
-                        type=str, choices=models.keys(), default="mobilenet")
     parser.add_argument("-mp", "--modelpath",
                         help="path of the model", type=str, default="model.h5")
     parser.add_argument("-me", "--metrics", type=str, default="metrics.txt")
@@ -186,6 +164,7 @@ def main():
         args.dataset, args.batch_size, IMG_SIZE)
 
     model = load_model(args.modelpath)
+    model.trainable = False
     model.summary()
 
     file_metrics = open(args.metrics, "w")
@@ -193,10 +172,7 @@ def main():
     #file_metrics.write("path_imagem, classe_real, classe_predita")
 
     for image_batch, label_batch in test_ds.as_numpy_iterator():
-        preprocess_input = models[args.model]["preproc"]
-        preprocess_input = preprocess_input(image_batch)
-
-        predictions = model.predict_on_batch(preprocess_input)
+        predictions = model(image_batch, training=False)
         predictions = tf.nn.softmax(predictions)
 
         for pos in range(len(label_batch)):
