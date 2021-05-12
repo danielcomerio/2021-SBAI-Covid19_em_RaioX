@@ -1,16 +1,12 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy import ndimage
-from IPython.display import Image, display
+#import matplotlib.pyplot as plt
 
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
-from tensorflow.keras.applications import mobilenet_v2
 from tensorflow.keras.models import load_model
 import argparse
 import os
-import cv2 as cv
 from PIL import Image as Img
 
 

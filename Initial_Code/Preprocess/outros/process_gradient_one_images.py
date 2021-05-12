@@ -1,10 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import ndimage
+from IPython.display import Image
 
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import load_model
+from PIL import Image
 
 
 def get_img_array(img_path, size=(250, 250)):
@@ -328,10 +330,11 @@ class GradVisualizer:
         figsize=(15, 8),
     ):
         # 1. Make two copies of the original image
-        img1 = np.copy(image)
+        #img1 = np.copy(image)
         img2 = np.copy(image)
 
         # 2. Process the normal gradients
+        """
         grads_attr = self.process_grads(
             image=img1,
             attributions=gradients,
@@ -344,6 +347,7 @@ class GradVisualizer:
             outlines_component_percentage=outlines_component_percentage,
             overlay=overlay,
         )
+        """
 
         # 3. Process the integrated gradients
         igrads_attr = self.process_grads(
@@ -359,13 +363,13 @@ class GradVisualizer:
             overlay=overlay,
         )
 
-        _, ax = plt.subplots(1, 3, figsize=figsize)
+        _, ax = plt.subplots(1, 2, figsize=figsize)
         ax[0].imshow(image)
-        ax[1].imshow(grads_attr.astype(np.uint8))
+        # ax[1].imshow(grads_attr.astype(np.uint8))
         ax[2].imshow(igrads_attr.astype(np.uint8))
 
         ax[0].set_title("Input")
-        ax[1].set_title("Normal gradients")
+        #ax[1].set_title("Normal gradients")
         ax[2].set_title("Integrated gradients")
         plt.show()
 
@@ -408,6 +412,8 @@ def main():
         clip_above_percentile=99,
         clip_below_percentile=0,
     )
+    im1 = Image.fromarray(img_points)
+    im1.save(r'C:\\Users\\danie\\Desktop\\ArtigoDaniel\\2021-SBAI-Covid19_em_RaioX\\Initial_Code\\Preprocess\\outros\\linear.png')
 
     img_area = vis.visualize(
         image=orig_img,
@@ -418,6 +424,8 @@ def main():
         morphological_cleanup=True,
         outlines=True,
     )
+    im2 = Image.fromarray(img_area)
+    im2.save(r'C:\\Users\\danie\\Desktop\\ArtigoDaniel\\2021-SBAI-Covid19_em_RaioX\\Initial_Code\\Preprocess\\outros\\integrated.png')
 
 
 if __name__ == "__main__":

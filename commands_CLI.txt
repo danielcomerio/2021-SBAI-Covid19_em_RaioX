@@ -58,4 +58,4 @@
 [X] py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models
 
 
-[X] py emphasizeHeatMapIntensity.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
+[X] py emphasizeHeatMapIntensity_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
