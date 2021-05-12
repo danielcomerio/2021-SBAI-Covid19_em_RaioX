@@ -13,7 +13,7 @@ def emphasizeHeatMapIntensity(img_array, img_type):
     if img_type == "points":
         lower = np.array([0, 100, 50])
     else:
-        lower = np.array([0, 5, 50])
+        lower = np.array([0, 1, 50])
 
     upper = np.array([10, 255, 255])
     mask = cv.inRange(img_array, lower, upper)
@@ -40,7 +40,7 @@ def parse_command_line_args():
 def main():
     args = parse_command_line_args()
 
-    ORIG_DIR = "HEATMAPS"
+    ORIG_DIR = "HEATMAPS_ORIGINAL"
     OUTPUT_DIR = "HEATMAPS_EMPHASIZED"
     os.mkdir(os.path.join(args.dataset, OUTPUT_DIR))
 

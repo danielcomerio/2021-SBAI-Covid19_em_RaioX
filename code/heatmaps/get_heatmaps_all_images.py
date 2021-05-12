@@ -151,12 +151,12 @@ class GradVisualizer:
 
     def __init__(self, positive_channel=None, negative_channel=None):
         if positive_channel is None:
-            self.positive_channel = [0, 0, 255]
+            self.positive_channel = [255, 0, 0]
         else:
             self.positive_channel = positive_channel
 
         if negative_channel is None:
-            self.negative_channel = [0, 0, 255]
+            self.negative_channel = [255, 0, 0]
         else:
             self.negative_channel = negative_channel
 
