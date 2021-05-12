@@ -1,0 +1,100 @@
+mobilenetNormal
+confusion_matrix: 
+ [[157   7  17]
+ [  4 996  35]
+ [  2  53 705]]
+accuracy_score: 0.9402834008097166 = 94,03%
+precision_score: 0.9458932653847599 = 94,59%
+recall_score: 0.9191179114814019 = 91,91%
+f1_score: 0.9316369938387888 = 93,16%
+
+
+
+
+test_mobilenetProcessed
+confusion_matrix: 
+ [[ 141   18   22]
+ [   7 1005   23]
+ [  11   73  676]]
+accuracy_score: 0.9220647773279352 = 92,21%
+precision_score: 0.9137833136364658 = 91,38%
+recall_score: 0.8798312339420092 = 87,98%
+f1_score: 0.895175867357156 = 89,52%
+
+
+
+
+resnetNormal
+confusion_matrix: 
+ [[ 141   17   23]
+ [   0 1016   19]
+ [   4   88  668]]
+accuracy_score: 0.923582995951417 = 92,36%
+precision_score: 0.9398641647376235 = 93,99%
+recall_score: 0.8798651351200752 = 87,99%
+f1_score: 0.9054534325349399 = 90,54%
+
+
+
+
+resnetProcessed
+confusion_matrix: 
+ [[179   1   1]
+ [329 649  57]
+ [175  18 567]]
+accuracy_score: 0.7059716599190283 = 70,60%
+precision_score: 0.713611983061695 = 71,36%
+recall_score: 0.7873520159728865 = 78,73%
+f1_score: 0.6651029318445795 = 66,51%
+
+
+
+
+efficientnetNormal
+confusion_matrix: 
+ [[142  14  25]
+ [  0 996  39]
+ [  2  52 706]]
+accuracy_score: 0.9331983805668016 = 93,32%
+precision_score: 0.9469491117796203 = 94,69%
+recall_score: 0.8919321985803648 = 89,19%
+f1_score: 0.9155501466937972 = 91,55%
+
+
+
+
+efficientnetProcessed
+confusion_matrix: 
+ [[175   2   4]
+ [136 823  76]
+ [117   6 637]]
+accuracy_score: 0.8274291497975709 = 82,74%
+precision_score: 0.7625585126799884 = 76,26%
+recall_score: 0.8667259351972426 = 86,67%
+f1_score: 0.7731242118840917 = 77,31%
+
+
+
+
+inceptionNormal
+confusion_matrix: 
+ [[ 149   15   17]
+ [   4 1017   14]
+ [  12   78  670]]
+accuracy_score: 0.9291497975708503 = 92,91%
+precision_score: 0.9250079933389491 = 92,50%
+recall_score: 0.8957973543033658 = 89,58%
+f1_score: 0.9089011460805269 = 90,89%
+
+
+
+
+inceptionProcessed
+confusion_matrix: 
+ [[ 129   20   32]
+ [   1 1005   29]
+ [   2   69  689]]
+accuracy_score: 0.9225708502024291 = 92,26%
+precision_score: 0.938195520100456 = 93,82%
+recall_score: 0.863433540814162 = 86,34%
+f1_score: 0.8936563817773524 = 89,37%

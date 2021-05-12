@@ -1,0 +1,61 @@
+[X] py preprocess_datasets.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
+
+
+[X] py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
+
+
+
+
+
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t mobilenetNormal -m mobilenet
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t mobilenetProcessed -m mobilenet
+
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t resnetNormal -m resnet
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t resnetProcessed -m resnet
+
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t efficientnetNormal -m efficientnet
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t efficientProcessed -m efficientnet
+
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t inceptionNormal -m inception
+[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t inceptionProcessed -m inception
+
+
+
+
+
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620259269.1216702_mobilenetNormal\model_mobilenetNormal.h5 -me ..\tests_results\test_mobilenetNormal.txt
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619632577.0899992_mobilenetProcessed\model_mobilenetProcessed.h5 -me ..\tests_results\test_mobilenetProcessed.txt
+
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619763157.5574179_resnetNormal\model_resnetNormal.h5 -me ..\tests_results\test_resnetNormal.txt
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619762983.280438_resnetProcessed\model_resnetProcessed.h5 -me ..\tests_results\test_resnetProcessed.txt
+
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620057149.6360557_efficientnetNormal\model_efficientnetNormal.h5 -me ..\tests_results\test_efficientnetNormal.txt
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620057738.500225_efficientnetProcessed\model_efficientnetProcessed.h5 -me ..\tests_results\test_efficientnetProcessed.txt
+
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620193229.588741_inceptionNormal\model_inceptionNormal.h5 -me ..\tests_results\test_inceptionNormal.txt
+[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620315625.5158389_inceptionProcessed\model_inceptionProcessed.h5 -me ..\tests_results\test_inceptionProcessed.txt
+
+
+
+
+
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_mobilenetNormal.txt
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_mobilenetProcessed.txt
+
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_resnetNormal.txt
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_resnetProcessed.txt
+
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_efficientnetNormal.txt
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_efficientnetProcessed.txt
+
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_inceptionNormal.txt
+[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_inceptionProcessed.txt
+
+
+
+
+
+[X] py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models
+
+
+[X] py emphasizeHeatMapIntensity.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
