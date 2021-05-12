@@ -40,8 +40,8 @@ def parse_command_line_args():
 def main():
     args = parse_command_line_args()
 
-    ORIG_DIR = "INTEGRATED_GRADIENTS"
-    OUTPUT_DIR = "HEATMAPS"
+    ORIG_DIR = "HEATMAPS"
+    OUTPUT_DIR = "HEATMAPS_EMPHASIZED"
     os.mkdir(os.path.join(args.dataset, OUTPUT_DIR))
 
     models = ["resnet", "mobilenet", "efficientnet", "inception"]
