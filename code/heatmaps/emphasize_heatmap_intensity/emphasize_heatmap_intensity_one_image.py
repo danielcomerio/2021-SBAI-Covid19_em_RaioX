@@ -11,7 +11,7 @@ def emphasizeHeatMapIntensity(img_path, img_type):
     if img_type == "points":
         lower = np.array([0, 100, 50])
     else:
-        lower = np.array([0, 5, 50])
+        lower = np.array([0, 1, 50])
 
     upper = np.array([10, 255, 255])
     mask = cv2.inRange(img_array, lower, upper)

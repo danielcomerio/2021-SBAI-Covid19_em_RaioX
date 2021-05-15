@@ -1,5 +1,9 @@
 other_codes
 
+test_combining_2_models
+
+models_metrics-secundary.txt
+
 model_mobilenetProcessed.h5
 model_resnetProcessed.h5
 model_resnetNormal.h5
