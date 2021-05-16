@@ -27,10 +27,36 @@ def get_file_line_values(line):
     for pos in range(2, len(line)):
         predictions.append(float(line[pos]))
 
+    #predictions = np.argmax(predictions, axis=-1)
+
     return image, label, predictions
 
 
-def define_class(predictions_sum, predicted_class):
+def define_class_maximum(maximums, predicted_class):
+    if predicted_class[0] > maximums[0]:
+        maximums[0] = predicted_class[0]
+
+    if predicted_class[1] > maximums[1]:
+        maximums[1] = predicted_class[1]
+
+    if predicted_class[2] > maximums[2]:
+        maximums[2] = predicted_class[2]
+
+    return maximums
+
+
+def define_class_vote(votes, predicted_class):
+    if str(predicted_class) == '0':
+        votes[0] = votes[0] + 1
+    elif str(predicted_class) == '1':
+        votes[1] = votes[1] + 1
+    else:
+        votes[2] = votes[2] + 1
+
+    return votes
+
+
+def define_class_average(predictions_sum, predicted_class):
     predictions_sum[0] += predicted_class[0]
     predictions_sum[1] += predicted_class[1]
     predictions_sum[2] += predicted_class[2]
@@ -146,7 +172,7 @@ def main():
                 break
 
             image, label, prediction = get_file_line_values(line)
-            predictions_sum = define_class(predictions_sum, prediction)
+            predictions_sum = define_class_average(predictions_sum, prediction)
 
             for pos in range(1, len(combination)):
                 line = combination[pos].readline()
@@ -156,11 +182,12 @@ def main():
                     raise Exception(
                         "Erro, ocorreu manipulação de imagens diferentes.")
 
-                predictions_sum = define_class(predictions_sum, prediction)
+                predictions_sum = define_class_average(
+                    predictions_sum, prediction)
 
                 image = image_compare
 
-            predictions_sum = predictions_average(predictions_sum)
+            predictions_sum = predictions_average(predictions_sum)  # -
 
             predicted_class = get_predicted_class(predictions_sum)
 
