@@ -1,6 +1,7 @@
 import argparse
 import os
 import numpy as np
+import random
 
 
 models_path = [
@@ -52,6 +53,22 @@ def create_prediction_string(predicted_class):
     return predicted_string
 
 
+def get_predicted_class(predicted_values):
+    predicted_class = np.argmax(predicted_values, axis=-1)
+
+    more_than_one = False
+    tied_classes = []
+    for pos in range(len(predicted_values)):
+        if predicted_values[pos] == predicted_values[predicted_class]:
+            tied_classes.append(pos)
+            more_than_one = True
+
+    if more_than_one:
+        predicted_class = random.choice(tied_classes)
+
+    return predicted_class
+
+
 def parse_command_line_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("filespath", help="path to the dataset", type=str)
@@ -98,7 +115,7 @@ def main():
 
             image = image_compare
 
-        predicted_class = np.argmax(maximums, axis=-1)
+        predicted_class = get_predicted_class(maximums)
 
         prediction_string = create_prediction_string(predicted_class)
 

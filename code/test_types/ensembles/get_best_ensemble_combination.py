@@ -3,13 +3,13 @@ import os
 import numpy as np
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, f1_score, recall_score, classification_report
 from more_itertools import powerset
+import random
 
 
 models_path = [
     "test_mobilenetNormal.txt",
     "test_mobilenetProcessed.txt",
     "test_resnetNormal.txt",
-    "test_resnetProcessed.txt",
     "test_resnetProcessed.txt",
     "test_efficientnetNormal.txt",
     "test_efficientnetProcessed.txt",
@@ -58,14 +58,20 @@ def create_prediction_string(predicted_class):
     return predicted_string
 
 
-def parse_command_line_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("filespath", help="path to the dataset", type=str)
-    parser.add_argument("-me", "--metrics", type=str, default="metrics.txt")
+def get_predicted_class(predicted_values):
+    predicted_class = np.argmax(predicted_values, axis=-1)
 
-    args = parser.parse_args()
+    more_than_one = False
+    tied_classes = []
+    for pos in range(len(predicted_values)):
+        if predicted_values[pos] == predicted_values[predicted_class]:
+            tied_classes.append(pos)
+            more_than_one = True
 
-    return args
+    if more_than_one:
+        predicted_class = random.choice(tied_classes)
+
+    return predicted_class
 
 
 def get_metrics(file_path, best_accuracy):
@@ -96,6 +102,16 @@ def get_metrics(file_path, best_accuracy):
     return best_accuracy, melhorou
 
 
+def parse_command_line_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filespath", help="path to the dataset", type=str)
+    parser.add_argument("-me", "--metrics", type=str, default="metrics.txt")
+
+    args = parser.parse_args()
+
+    return args
+
+
 # py get_best_ensemble_combination.py C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\files_results -me results.txt
 # py ..\..\metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\code\test_types\ensembles\results.txt
 
@@ -123,14 +139,14 @@ def main():
 
         line = " "
         while line != '':
-            prediction_sum = [0, 0, 0]
+            predictions_sum = [0, 0, 0]
 
             line = combination[0].readline()
             if line == '':
                 break
 
             image, label, prediction = get_file_line_values(line)
-            prediction_sum = define_class(prediction_sum, prediction)
+            predictions_sum = define_class(predictions_sum, prediction)
 
             for pos in range(1, len(combination)):
                 line = combination[pos].readline()
@@ -140,13 +156,13 @@ def main():
                     raise Exception(
                         "Erro, ocorreu manipulação de imagens diferentes.")
 
-                prediction_sum = define_class(prediction_sum, prediction)
+                predictions_sum = define_class(predictions_sum, prediction)
 
                 image = image_compare
 
-            prediction_sum = predictions_average(prediction_sum)
+            predictions_sum = predictions_average(predictions_sum)
 
-            predicted_class = np.argmax(prediction_sum, axis=-1)
+            predicted_class = get_predicted_class(predictions_sum)
 
             prediction_string = create_prediction_string(predicted_class)
 

@@ -121,15 +121,15 @@ f1_score: 0.9286699355056397 = 92,87%
 
 
 
-Ensemble - Voto (X)
+Ensemble - Voto (De fato aleatório) (X)
 confusion_matrix: 
- [[ 164    7   10]
- [   4 1019   12]
- [   5   60  695]]
-accuracy_score: 0.9504048582995951 = 95,04%
-precision_score: 0.9518663948561059 = 95,19%
-recall_score: 0.9350306983595856 = 93,50%
-f1_score: 0.942839335171138 = 94,28%
+ [[ 161    8   12]
+ [   4 1014   17]
+ [   3   58  699]]
+accuracy_score: 0.9483805668016194 = 94,84%
+precision_score: 0.9524623524623524 = 95,25%
+recall_score: 0.929649916487913 = 92,96%
+f1_score: 0.9403391601370236 = 94,03%
 
 
 
@@ -169,15 +169,15 @@ f1_score: 0.9503803596465028 = 95,04%
 
 
 
-Ensemble - Voto + Peso (X)
+Ensemble - Voto + Peso (De fato aleatório) (X)
 confusion_matrix: 
- [[ 165    6   10]
- [   7 1014   14]
- [  17   42  701]]
+ [[ 164    6   11]
+ [   5 1014   16]
+ [  16   42  702]]
 accuracy_score: 0.951417004048583 = 95,14%
-precision_score: 0.9315715615423388 = 93,16%
-recall_score: 0.937893591974973 = 93,79%
-f1_score: 0.9343651624052196 = 93,44%
+precision_score: 0.9347505697788184 = 93,47%
+recall_score: 0.9364905678400501 = 93,65%
+f1_score: 0.9353951408205412 = 93,54%
 
 
 
@@ -253,27 +253,26 @@ f1_score: 0.8799058309731412 = 87,99%
 
 
 
-Ensemble - Voto (NORMAL)
+Ensemble - Voto (NORMAL) (De fato aleatório)
+[[ 153   11   17]
+ [   4 1014   17]
+ [   3   65  692]]
+accuracy_score: 0.9407894736842105 = 94,08%
+precision_score: 0.9465644244783111 = 94,66%
+recall_score: 0.9118467760401083 = 91,18%
+f1_score: 0.9276909996530592 = 92,77%
+
+
+
+Ensemble - Voto (PROCESSED) (De fato aleatório)
 confusion_matrix: 
- [[ 155   10   16]
- [   4 1019   12]
- [   3   74  683]]
-accuracy_score: 0.9397773279352226 = 93,98%
-precision_score: 0.9470843439338772 = 94,71%
-recall_score: 0.9131929548294897 = 91,32%
-f1_score: 0.928545796371753 = 92,85%
-
-
-
-Ensemble - Voto (PROCESSED)
-confusion_matrix: 
- [[176   2   3]
- [106 913  16]
- [ 75  44 641]]
-accuracy_score: 0.8755060728744939 = 87,55%
-precision_score: 0.8054142293944784 = 80,54%
-recall_score: 0.8993074490346826 = 89,93%
-f1_score: 0.8242797453568097 = 82,43%
+ [[165   7   9]
+ [ 58 952  25]
+ [ 45  44 671]]
+accuracy_score: 0.9048582995951417 = 90,49%
+precision_score: 0.8388657446031055 = 83,89%
+recall_score: 0.9047679033572936 = 90,48%
+f1_score: 0.8617522706811048 = 86,17%
 
 
 

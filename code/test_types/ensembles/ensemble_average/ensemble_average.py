@@ -1,10 +1,11 @@
 import argparse
 import os
 import numpy as np
+import random
 
 
 """
-"test_mobilenetNormal.txt",
+    "test_mobilenetNormal.txt",
     "test_mobilenetNormal.txt",
     "test_efficientnetProcessed.txt",
     "test_efficientnetProcessed.txt",
@@ -75,6 +76,22 @@ def create_prediction_string(predicted_class):
     return predicted_string
 
 
+def get_predicted_class(predicted_values):
+    predicted_class = np.argmax(predicted_values, axis=-1)
+
+    more_than_one = False
+    tied_classes = []
+    for pos in range(len(predicted_values)):
+        if predicted_values[pos] == predicted_values[predicted_class]:
+            tied_classes.append(pos)
+            more_than_one = True
+
+    if more_than_one:
+        predicted_class = random.choice(tied_classes)
+
+    return predicted_class
+
+
 def parse_command_line_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("filespath", help="path to the dataset", type=str)
@@ -100,14 +117,14 @@ def main():
 
     line = " "
     while line != '':
-        prediction_sum = [0, 0, 0]
+        predictions_sum = [0, 0, 0]
 
         line = files_path[0].readline()
         if line == '':
             break
 
         image, label, prediction = get_file_line_values(line)
-        prediction_sum = define_class(prediction_sum, prediction)
+        predictions_sum = define_class(predictions_sum, prediction)
 
         for pos in range(1, len(files_path)):
             line = files_path[pos].readline()
@@ -117,13 +134,13 @@ def main():
                 raise Exception(
                     "Erro, ocorreu manipulação de imagens diferentes.")
 
-            prediction_sum = define_class(prediction_sum, prediction)
+            predictions_sum = define_class(predictions_sum, prediction)
 
             image = image_compare
 
-        prediction_sum = predictions_average(prediction_sum)
+        predictions_sum = predictions_average(predictions_sum)
 
-        predicted_class = np.argmax(prediction_sum, axis=-1)
+        predicted_class = get_predicted_class(predictions_sum)
 
         prediction_string = create_prediction_string(predicted_class)
 
