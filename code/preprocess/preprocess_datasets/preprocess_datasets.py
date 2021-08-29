@@ -12,7 +12,7 @@ import pydicom
 
 import argparse
 
- 
+
 def get_datasets_dirs(datasets_dir):
     files_and_dirs = os.listdir(datasets_dir)
     files_and_dirs_with_paths = map(
@@ -115,10 +115,13 @@ def preprocess_actualmed_ds(dir_ds):
 
 def preprocess_covid_chestxray_dataset(dir_ds):
     data = pd.read_csv(os.path.join(dir_ds, "metadata.csv"))
-    data = data[['filename', 'finding', 'modality']]
+    data = data[['filename', 'finding', 'view', 'modality']]
 
     # remove imagens que nao sao de raio-x
     data = data[data['modality'] != 'CT']
+
+    # remove imagens de raios X que são laterais
+    data = data[data['view'] != 'L']
 
     # normaliza os labels
     data['finding'] = data['finding'].replace("No Finding", "NORMAL")
