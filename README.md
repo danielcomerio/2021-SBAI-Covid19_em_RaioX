@@ -13,13 +13,6 @@
 
 ## Arquivos
 
-### Arquivos principais
-
-- [train.py](Code/train.py): Responsável por treinar o modelo.
-- [test.py](Code/test.py): Responsável por testar o modelo.
-- [metrics.py](Code/metrics.py): Responsável por criar a matriz de confusão e calcular suas respectivas métricas.
-
-
 ### Conjunto de arquivos para realizar o pré-processamento das bases de dados
 
 - [preprocess_datasets.py](Code/preprocess_datasets/preprocess_datasets.py): Responsável por construir a base de dados deste trabalho.
@@ -32,12 +25,11 @@
 - [preprocess_one_image.py](Code/preprocess_images/preprocess_one_image.py): Realiza o pré-processamento de apenas uma imagem (utilizado para testes).
 
 
-### Conjunto de arquivos para aplicação do método dos gradientes integrados nas imagens
+### Conjunto de arquivos principal
 
-- [get_heatmaps_all_images.py](Code/heatmaps/get_heatmaps/get_heatmaps_all_images.py): Aplica o método dos gradientes integrados em várias imagens.
-- [get_heatmaps_one_image.py](Code/heatmaps/get_heatmaps/get_heatmaps_one_image.py): Aplica o método dos gradientes integrados em apenas uma imagem (utilizado para testes).
-- [emphasize_heatmap_intensity_all_images.py](Code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_all_images.py): Enfatiza a cor dos gradientes integrados em várias imagens.
-- [emphasize_heatmap_intensity_one_image.py](Code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_one_image.py): Enfatiza a cor dos gradientes integrados em apenas uma imagem (utilizado para testes).
+- [train.py](Code/train.py): Responsável por treinar o modelo.
+- [test.py](Code/test.py): Responsável por testar o modelo.
+- [metrics.py](Code/metrics.py): Responsável por criar a matriz de confusão e calcular suas respectivas métricas.
 
 
 ### Conjunto de arquivos para construção dos ensembles
@@ -46,6 +38,14 @@
 - [ensemble_vote.py](Code/ensembles/ensemble_vote/ensemble_vote.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "MaxVotos".
 - [ensemble_average.py](Code/ensembles/ensemble_average/ensemble_average.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "Média".
 - [ensemble_maximum.py](Code/ensembles/ensemble_maximum/ensemble_maximum.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "MaxProb".
+
+
+### Conjunto de arquivos para aplicação do método dos gradientes integrados nas imagens
+
+- [get_heatmaps_all_images.py](Code/heatmaps/get_heatmaps/get_heatmaps_all_images.py): Aplica o método dos gradientes integrados em várias imagens.
+- [get_heatmaps_one_image.py](Code/heatmaps/get_heatmaps/get_heatmaps_one_image.py): Aplica o método dos gradientes integrados em apenas uma imagem (utilizado para testes).
+- [emphasize_heatmap_intensity_all_images.py](Code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_all_images.py): Enfatiza a cor dos gradientes integrados em várias imagens.
+- [emphasize_heatmap_intensity_one_image.py](Code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_one_image.py): Enfatiza a cor dos gradientes integrados em apenas uma imagem (utilizado para testes).
 
 
 ### Conjunto de arquivos relacionados a informações ou imagens deste trabalho
