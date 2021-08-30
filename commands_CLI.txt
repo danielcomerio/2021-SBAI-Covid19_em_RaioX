@@ -1,61 +1,80 @@
-[X] py preprocess_datasets.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
-
-
-[X] py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
-
-
-
-
-
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t mobilenetNormal -m mobilenet
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t mobilenetProcessed -m mobilenet
-
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t resnetNormal -m resnet
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t resnetProcessed -m resnet
-
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t efficientnetNormal -m efficientnet
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t efficientProcessed -m efficientnet
-
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t inceptionNormal -m inception
-[X] py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t inceptionProcessed -m inception
+Comando para executar o arquivo "preprocess_datasets.py": py preprocess_datasets.py "caminho da pasta da base de dados"
+Exemplo: py preprocess_datasets.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
 
 
 
 
 
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620259269.1216702_mobilenetNormal\model_mobilenetNormal.h5 -me ..\tests_results\test_mobilenetNormal.txt
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619632577.0899992_mobilenetProcessed\model_mobilenetProcessed.h5 -me ..\tests_results\test_mobilenetProcessed.txt
-
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619763157.5574179_resnetNormal\model_resnetNormal.h5 -me ..\tests_results\test_resnetNormal.txt
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619762983.280438_resnetProcessed\model_resnetProcessed.h5 -me ..\tests_results\test_resnetProcessed.txt
-
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620057149.6360557_efficientnetNormal\model_efficientnetNormal.h5 -me ..\tests_results\test_efficientnetNormal.txt
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620057738.500225_efficientnetProcessed\model_efficientnetProcessed.h5 -me ..\tests_results\test_efficientnetProcessed.txt
-
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620193229.588741_inceptionNormal\model_inceptionNormal.h5 -me ..\tests_results\test_inceptionNormal.txt
-[X] py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620315625.5158389_inceptionProcessed\model_inceptionProcessed.h5 -me ..\tests_results\test_inceptionProcessed.txt
+Comando para executar o arquivo "preprocess_all_images.py": py preprocess_all_images.py "caminho da pasta da base de dados"
+Exemplo: py preprocess_all_images.py C:\\Users\\danie\\Desktop\\Artigo-Daniel\\DATA_SET
 
 
 
 
 
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_mobilenetNormal.txt
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_mobilenetProcessed.txt
+Comando para executar o arquivo "train.py": py train.py "caminho da pasta da base de dados" -t "caminho da pasta que será criada para o modelo e suas informações" -m "nome da arquitetura a ser utilizada"
+Exemplos:
 
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_resnetNormal.txt
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_resnetProcessed.txt
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t mobilenetNormal -m mobilenet
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t mobilenetProcessed -m mobilenet
 
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_efficientnetNormal.txt
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_efficientnetProcessed.txt
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t resnetNormal -m resnet
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t resnetProcessed -m resnet
 
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_inceptionNormal.txt
-[X] py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_inceptionProcessed.txt
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t efficientnetNormal -m efficientnet
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t efficientProcessed -m efficientnet
 
-
-
-
-
-[X] py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -t inceptionNormal -m inception
+py train.py  C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -t inceptionProcessed -m inception
 
 
-[X] py emphasizeHeatMapIntensity_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
+
+
+
+Comando para executar o arquivo "test.py": py test.py "caminho da pasta da base de dados" -mp "caminho do arquivo do modelo a ser testado" -me "caminho do arquivo de texto que será criado para salvar as informações do teste"
+Exemplos:
+
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620259269.1216702_mobilenetNormal\model_mobilenetNormal.h5 -me ..\tests_results\test_mobilenetNormal.txt
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619632577.0899992_mobilenetProcessed\model_mobilenetProcessed.h5 -me ..\tests_results\test_mobilenetProcessed.txt
+
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619763157.5574179_resnetNormal\model_resnetNormal.h5 -me ..\tests_results\test_resnetNormal.txt
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1619762983.280438_resnetProcessed\model_resnetProcessed.h5 -me ..\tests_results\test_resnetProcessed.txt
+
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620057149.6360557_efficientnetNormal\model_efficientnetNormal.h5 -me ..\tests_results\test_efficientnetNormal.txt
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620057738.500225_efficientnetProcessed\model_efficientnetProcessed.h5 -me ..\tests_results\test_efficientnetProcessed.txt
+
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\DONE_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620193229.588741_inceptionNormal\model_inceptionNormal.h5 -me ..\tests_results\test_inceptionNormal.txt
+py test.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET\PROCESSED_DATA -mp C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models\1620315625.5158389_inceptionProcessed\model_inceptionProcessed.h5 -me ..\tests_results\test_inceptionProcessed.txt
+
+
+
+
+
+Comando para executar o arquivo "metrics.py": py metrics.py -me "caminho do arquivo de texto com as informações do teste"
+Exemplos:
+
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_mobilenetNormal.txt
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_mobilenetProcessed.txt
+
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_resnetNormal.txt
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_resnetProcessed.txt
+
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_efficientnetNormal.txt
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_efficientnetProcessed.txt
+
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_inceptionNormal.txt
+py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\tests_results\test_inceptionProcessed.txt
+
+
+
+
+
+Comando para executar o arquivo "get_heatmaps_all_images.py": py get_heatmaps_all_images.py "caminho da pasta da base de dados" "caminho da pasta que contém todas as pastas dos modelos e suas informações"
+Exemplos: py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models
+
+
+
+
+
+Comando para executar o arquivo "emphasizeHeatMapIntensity_all_images.py": py emphasizeHeatMapIntensity_all_images.py "caminho da pasta da base de dados"
+Exemplos: py emphasizeHeatMapIntensity_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
