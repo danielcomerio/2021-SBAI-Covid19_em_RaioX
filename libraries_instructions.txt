@@ -1,0 +1,80 @@
+Linguagem utilizada: Python 3
+
+
+
+Todas bibliotecas utilizadas (com seus respectivos comandos de instalação):
+
+pandas         -> pip install pandas
+numpy          -> pip install numpy
+cv2            -> pip install opencv-python
+pydicom        -> pip install pydicom
+tqdm           -> pip install tqdm
+glob           -> pip install glob2
+sklearn        -> pip install scikit-learn
+argparse       -> pip install argparse
+tensorflow     -> pip install tensorflow
+matplotlib     -> pip install matplotlib
+sklearn        -> pip install scikit-learn
+more_itertools -> pip install more-itertools
+scipy          -> pip install scipy
+PIL            -> pip install Pillow
+
+
+
+Bibliotecas utilizadas em cada um dos arquivos (com seus respectivos comandos de instalação):
+
+Arquivo: "preprocess_datasets.py"
+pandas         -> pip install pandas
+numpy          -> pip install numpy
+cv2            -> pip install opencv-python
+pydicom        -> pip install pydicom
+tqdm           -> pip install tqdm
+glob           -> pip install glob2
+sklearn        -> pip install scikit-learn
+argparse       -> pip install argparse
+
+
+Arquivo: "preprocess_all_images.py"
+cv2            -> pip install opencv-python
+numpy          -> pip install numpy
+argparse       -> pip install argparse
+
+
+Arquivo: "train.py"
+tensorflow     -> pip install tensorflow
+matplotlib     -> pip install matplotlib
+argparse       -> pip install argparse
+
+
+Arquivo: "test.py"
+tensorflow     -> pip install tensorflow
+numpy          -> pip install numpy
+argparse       -> pip install argparse
+
+
+Arquivo: "metrics.py"
+sklearn        -> pip install scikit-learn
+numpy          -> pip install numpy
+argparse       -> pip install argparse
+
+
+Arquivo: "qualquer um dos arquivos de ensemble"
+sklearn        -> pip install scikit-learn
+numpy          -> pip install numpy
+argparse       -> pip install argparse
+more_itertools -> pip install more-itertools
+
+
+Arquivo: "get_heatmaps_all_images.py"
+scipy          -> pip install scipy
+PIL            -> pip install Pillow
+numpy          -> pip install numpy
+tensorflow     -> pip install tensorflow
+argparse       -> pip install argparse
+
+
+Arquivo: "emphasize_heatmap_intensity_all_images.py"
+cv2            -> pip install opencv-python
+numpy          -> pip install numpy
+argparse       -> pip install argparse
+
