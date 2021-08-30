@@ -21,7 +21,7 @@ PIL            -> pip install Pillow
 
 
 
-Bibliotecas utilizadas em cada um dos arquivos (com seus respectivos comandos de instalação):
+Bibliotecas utilizadas para cada arquivo individualmente (com seus respectivos comandos de instalação):
 
 Arquivo: "preprocess_datasets.py"
 pandas         -> pip install pandas
