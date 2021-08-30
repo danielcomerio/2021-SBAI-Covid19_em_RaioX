@@ -70,11 +70,11 @@ py metrics.py -me C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX
 
 
 Comando para executar o arquivo "get_heatmaps_all_images.py": py get_heatmaps_all_images.py "caminho da pasta da base de dados" "caminho da pasta que contém todas as pastas dos modelos e suas informações"
-Exemplos: py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models
+Exemplo: py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET C:\Users\danie\Desktop\ArtigoDaniel\2021-SBAI-Covid19_em_RaioX\trained_models
 
 
 
 
 
 Comando para executar o arquivo "emphasizeHeatMapIntensity_all_images.py": py emphasizeHeatMapIntensity_all_images.py "caminho da pasta da base de dados"
-Exemplos: py emphasizeHeatMapIntensity_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
+Exemplo: py emphasizeHeatMapIntensity_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
