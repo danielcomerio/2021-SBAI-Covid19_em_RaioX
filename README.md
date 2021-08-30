@@ -53,3 +53,8 @@
 - [paper_images](paper_images): Contém as imagens utilizadas na confecção deste trabalho.
 - [trained_models](trained_models): Contém as informações de treinamento e validação de cada um dos modelos (devido ao tamanho dos modelos não foi possível colocá-los aqui no github).
 - [tests_results](tests_results): Contém o resultado dos testes de cada um dos modelos, as matrizes de confusão e as métricas referentes às matrizes.
+
+
+## Observação
+
+- Após a conclusão deste trabalho foi verificado a necessidade de um ajuste no arquivo "preprocess_datasets.py", pois as imagens de raios X laterais, que não fazem parte do domínio do problema deste trabalho, não estavam sendo filtradas. O arquivo foi ajustado e agora essas imagens estão sendo devidamente filtradas.
