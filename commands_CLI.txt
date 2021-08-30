@@ -78,3 +78,4 @@ Exemplo: py get_heatmaps_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA
 
 Comando para executar o arquivo "emphasizeHeatMapIntensity_all_images.py": py emphasizeHeatMapIntensity_all_images.py "caminho da pasta da base de dados"
 Exemplo: py emphasizeHeatMapIntensity_all_images.py C:\Users\danie\Desktop\Artigo-Daniel\DATA_SET
+
