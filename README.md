@@ -52,7 +52,7 @@
 
 - [paper_images](paper_images): Contém as imagens utilizadas na confecção deste trabalho.
 - [trained_models](trained_models): Contém as informações de treinamento e validação de cada um dos modelos (devido ao tamanho dos modelos não foi possível colocá-los aqui no github).
-- [tests_results](tests_results): Contém os resultados dos testes de cada um dos modelos, as matrizes de confusão e as métricas referentes às matrizes.
+- [tests_results](tests_results): Contém os resultados dos testes de cada um dos modelos, as matrizes de confusão e as métricas referentes às matrizes de cada um dos testes.
 
 
 ## Observação
