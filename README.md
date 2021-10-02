@@ -15,7 +15,7 @@
 
 ### Conjunto de arquivos para realizar o pré-processamento das bases de dados
 
-- [preprocess_datasets.py](code/preprocess_datasets/preprocess/preprocess_datasets.py): Responsável por construir a base de dados deste trabalho.
+- [preprocess_datasets.py](code/preprocess/preprocess_datasets/preprocess_datasets.py): Responsável por construir a base de dados deste trabalho.
 - [How_to_Run.txt](code/preprocess/preprocess_datasets/How_to_Run.txt): Tutorial de como realizar o pré-processamento das bases de dados.
 
 
