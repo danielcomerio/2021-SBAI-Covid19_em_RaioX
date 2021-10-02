@@ -15,37 +15,37 @@
 
 ### Conjunto de arquivos para realizar o pré-processamento das bases de dados
 
-- [preprocess_datasets.py](Code/preprocess_datasets/preprocess_datasets.py): Responsável por construir a base de dados deste trabalho.
-- [How_to_Run.txt](Code/preprocess_datasets/How_to_Run.txt): Tutorial de como realizar o pré-processamento das bases de dados.
+- [preprocess_datasets.py](code/preprocess_datasets/preprocess/preprocess_datasets.py): Responsável por construir a base de dados deste trabalho.
+- [How_to_Run.txt](code/preprocess/preprocess_datasets/How_to_Run.txt): Tutorial de como realizar o pré-processamento das bases de dados.
 
 
 ### Conjunto de arquivos para realizar o pré-processamento das imagens
 
-- [preprocess_all_images.py](Code/preprocess_images/preprocess_all_images.py): Realiza o pré-processamento de várias imagens.
-- [preprocess_one_image.py](Code/preprocess_images/preprocess_one_image.py): Realiza o pré-processamento de apenas uma imagem (utilizado para testes).
+- [preprocess_all_images.py](code/preprocess/preprocess_images/preprocess_all_images.py): Realiza o pré-processamento de várias imagens.
+- [preprocess_one_image.py](code/preprocess/preprocess_images/preprocess_one_image.py): Realiza o pré-processamento de apenas uma imagem (utilizado para testes).
 
 
 ### Conjunto de arquivos principal
 
-- [train.py](Code/train.py): Responsável por treinar o modelo.
-- [test.py](Code/test.py): Responsável por testar o modelo.
-- [metrics.py](Code/metrics.py): Responsável por criar a matriz de confusão e calcular suas respectivas métricas.
+- [train.py](code/train.py): Responsável por treinar o modelo.
+- [test.py](code/test.py): Responsável por testar o modelo.
+- [metrics.py](code/metrics.py): Responsável por criar a matriz de confusão e calcular suas respectivas métricas.
 
 
 ### Conjunto de arquivos para construção dos ensembles
 
-- [get_best_ensemble_combination.py](Code/ensembles/get_best_ensemble_combination.py): Responsável por encontrar a melhor combinação de modelos para a construção ensembles.
-- [ensemble_vote.py](Code/ensembles/ensemble_vote/ensemble_vote.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "MaxVotos".
-- [ensemble_average.py](Code/ensembles/ensemble_average/ensemble_average.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "Média".
-- [ensemble_maximum.py](Code/ensembles/ensemble_maximum/ensemble_maximum.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "MaxProb".
+- [get_best_ensemble_combination.py](code/test_types/ensembles/get_best_ensemble_combination.py): Responsável por encontrar a melhor combinação de modelos para a construção ensembles.
+- [ensemble_vote.py](code/test_types/ensembles/ensemble_vote/ensemble_vote.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "MaxVotos".
+- [ensemble_average.py](code/test_types/ensembles/ensemble_average/ensemble_average.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "Média".
+- [ensemble_maximum.py](code/test_types/ensembles/ensemble_maximum/ensemble_maximum.py): Responsável por construir ensembles com a estratégia de sumarização chamada de "MaxProb".
 
 
 ### Conjunto de arquivos para aplicação do método dos gradientes integrados nas imagens
 
-- [get_heatmaps_all_images.py](Code/heatmaps/get_heatmaps/get_heatmaps_all_images.py): Aplica o método dos gradientes integrados em várias imagens.
-- [get_heatmaps_one_image.py](Code/heatmaps/get_heatmaps/get_heatmaps_one_image.py): Aplica o método dos gradientes integrados em apenas uma imagem (utilizado para testes).
-- [emphasize_heatmap_intensity_all_images.py](Code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_all_images.py): Enfatiza a cor dos gradientes integrados em várias imagens.
-- [emphasize_heatmap_intensity_one_image.py](Code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_one_image.py): Enfatiza a cor dos gradientes integrados em apenas uma imagem (utilizado para testes).
+- [get_heatmaps_all_images.py](code/heatmaps/get_heatmaps/get_heatmaps_all_images.py): Aplica o método dos gradientes integrados em várias imagens.
+- [get_heatmaps_one_image.py](code/heatmaps/get_heatmaps/get_heatmaps_one_image.py): Aplica o método dos gradientes integrados em apenas uma imagem (utilizado para testes).
+- [emphasize_heatmap_intensity_all_images.py](code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_all_images.py): Enfatiza a cor dos gradientes integrados em várias imagens.
+- [emphasize_heatmap_intensity_one_image.py](code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_one_image.py): Enfatiza a cor dos gradientes integrados em apenas uma imagem (utilizado para testes).
 
 
 ### Conjunto de arquivos relacionados a informações ou imagens deste trabalho
