@@ -48,7 +48,7 @@
 - [emphasize_heatmap_intensity_one_image.py](code/heatmaps/emphasize_heatmap_intensity/emphasize_heatmap_intensity_one_image.py): Enfatiza a cor dos gradientes integrados em apenas uma imagem (utilizado para testes).
 
 
-### Conjunto de arquivos relacionado à informações ou imagens deste trabalho
+### Conjunto de arquivos relacionado às informações ou imagens deste trabalho
 
 - [paper_images](paper_images): Contém as imagens utilizadas na confecção deste trabalho.
 - [trained_models](trained_models): Contém as informações de treinamento e validação de cada um dos modelos (devido ao tamanho dos modelos não foi possível colocá-los aqui no github).
